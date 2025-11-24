@@ -21,11 +21,11 @@ Client → Ingress → Service → Deployment (3 Pods)
                      ↑
              Prometheus ← Grafana
 
-1. Установка Minikube
+# 1. Установка Minikube
 minikube start --cpus=4 --memory=8192mb --nodes=2
 kubectl get nodes
 
-2. Контейнеризация приложения
+# 2. Контейнеризация приложения
 Java код
 import spark.Spark;
 
@@ -49,7 +49,7 @@ CMD ["java","-jar","/app.jar"]
 
 docker build -t sentiment-app:1.0 .
 
-3. Развертывание в Kubernetes
+# 3. Развертывание в Kubernetes
 Deployment
 apiVersion: apps/v1
 kind: Deployment
@@ -104,7 +104,7 @@ spec:
 HPA
 kubectl autoscale deployment sentiment-deployment --cpu-percent=50 --min=3 --max=10
 
-4. Тестирование API
+# 4. Тестирование API
 
 Получение URL:
 
@@ -115,7 +115,7 @@ minikube service sentiment-service --url
 
 curl "<URL>/api/sentiment?text=hello"
 
-5. Мониторинг: Prometheus + Grafana
+# 5. Мониторинг: Prometheus + Grafana
    
 Установка
 
@@ -134,7 +134,7 @@ Grafana:
 
 kubectl port-forward svc/prometheus-grafana 3000:80
 
-6. Итоги проекта
+# 6. Итоги проекта
    
 Достижения:
 
