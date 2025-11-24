@@ -15,7 +15,7 @@ Kubernetes: Deployment (3 реплики), Service, Ingress, HPA
 
 Аналитический обзор 5 статей arXiv о тенденциях Kubernetes + AI (2024–2025)
 
-🏗 Архитектура решения
+Архитектура решения
 Client → Ingress → Service → Deployment (3 Pods)
                      ↑
              Prometheus ← Grafana
@@ -115,8 +115,11 @@ minikube service sentiment-service --url
 curl "<URL>/api/sentiment?text=hello"
 
 5. Мониторинг: Prometheus + Grafana
+   
 Установка
+
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
 helm install prometheus prometheus-community/kube-prometheus-stack
 
 Доступ
@@ -131,6 +134,7 @@ Grafana:
 kubectl port-forward svc/prometheus-grafana 3000:80
 
 6. Итоги проекта
+   
 Достижения:
 
 Успешно развернуто ИИ-приложение в Minikube.
