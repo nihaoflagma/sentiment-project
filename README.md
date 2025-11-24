@@ -1,5 +1,6 @@
 # sentiment-project
 AI Sentiment Analysis App on Kubernetes (Minikube)
+
 Описание проекта
 
 Данный проект представляет собой Java-приложение для анализа тональности текста, контейнеризированное в Docker и развернутое в Kubernetes (Minikube).
